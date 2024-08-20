@@ -6,7 +6,7 @@ body {
 
 .bcv-logo {
   margin-top: 100px;
-  margin-left: 700px;
+  margin-left: 50px;
   width: 600px;
   height: 600px;
   opacity: 20%;
@@ -19,10 +19,11 @@ body {
   z-index: 1;
   position: absolute; /* Este elemento estará encima */
   top: 50px; /* Posicionamiento respecto al contenedor */
-  left: 50px;
+  left: 30px;
+  right: 10px;
   z-index: 10; /* Asegura que está encima del otro */
   padding: 10px;
-  margin-left: 700px;
+  left: 100px;
   margin-bottom: 500px;
   margin-top: 150px;
 }
@@ -31,13 +32,15 @@ body {
   position: relative; /* El contenedor base */
   width: 300px;
   height: 200px;
+  left: 100px;
+  right: 100px;
 }
 
 .dolar-symbol {
   position: absolute;
   bottom: 10px; /* Ajusta la posición según sea necesario */
   top: 400px;
-  left: 330%;
+  left: 350px;
   transform: translateX(-50%);
 }
 
@@ -46,10 +49,10 @@ body {
   text-align: center;
   width: 300px;
   height: 100px;
-  margin-left: 850px;
   background-color: #000000;
   color: #ffffff;
   font-size: 45px;
   border-radius: 5px;
   bottom: 200px;
+  left: 200px;
 }
