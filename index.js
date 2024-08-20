@@ -1,6 +1,6 @@
 //Obteniendo informacion del api
 async function getData() {
-  const url = "http://localhost:3000/";
+  const url = "https://bcv-api.vercel.app/";
   try {
     const response = await fetch(url);
     if (!response.ok) {
