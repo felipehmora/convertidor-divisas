@@ -1,4 +1,3 @@
-/* style.css */
 * {
   margin: 0;
   padding: 0;
@@ -11,133 +10,119 @@ html {
   font-family: Arial, sans-serif;
 }
 
-/* Contenedor principal */
 .container {
   display: flex;
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center; /* Centrar verticalmente */
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  height: 100vh; /* Ocupa el 100% de la altura de la ventana */
-  background-image: url("assets/background-image.jpg"); /* Imagen de fondo */
-  background-size: cover; /* Asegura que la imagen de fondo cubra toda el área */
-  background-position: center; /* Centra la imagen de fondo */
-  text-align: center; /* Centra el texto de los elementos hijos */
+  min-height: 100vh;
+  background-image: url("assets/background-image.jpg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
   position: relative;
   gap: 15px;
+  padding: 20px;
 }
 
-/* Estilos para el contenedor de las tasas de cambio */
 .money {
   font-size: 2rem;
   color: white;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
   border-radius: 10px;
+  max-width: 100%;
+  word-wrap: break-word;
 }
 
-/* Estilos para la fecha */
 #date {
   font-size: 1.5rem;
   color: black;
   margin-top: 20px;
 }
 
-/* Imagen del dólar */
 .dolar-symbol {
-  position: relative;
   width: 50px;
   height: 50px;
-  opacity: 0.8; /* Hace que la imagen sea ligeramente transparente */
+  opacity: 0.8;
+}
+
+.converter {
+  width: 100%;
+  max-width: 400px;
 }
 
 form {
-  display: flex; /* Usar flexbox para el formulario */
-  flex-direction: row; /* Elementos en fila */
-  align-items: center; /* Alinear verticalmente al centro */
-  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
-/* Estilo para los inputs */
 input[type="number"] {
-  width: 200px; /* Ancho fijo para los inputs */
-  padding: 10px; /* Espaciado interno */
-  border: 1px solid #ccc; /* Borde gris claro */
-  border-radius: 5px; /* Bordes redondeados */
-  font-size: 1rem; /* Tamaño de fuente */
-  transition: border-color 0.3s; /* Efecto de transición para el borde */
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
 }
 
-/* Efecto al enfocar los inputs */
 input[type="number"]:focus {
-  border-color: #007bff; /* Color de borde al enfocar */
-  outline: none; /* Eliminar el contorno predeterminado */
-}
-
-/* Estilo para el botón */
-button {
-  background-color: white; /* Fondo azul */
-  border: none; /* Eliminar borde */
-  border-radius: 5px; /* Bordes redondeados */
-  padding: 10px; /* Espaciado interno */
-  cursor: pointer; /* Cambia el cursor a puntero */
-  display: flex; /* Usar flexbox para centrar la imagen */
-  align-items: center; /* Centrar la imagen verticalmente */
-  justify-content: center; /* Centrar la imagen horizontalmente */
-  transition: 0.3s; /* Transición suave para el fondo */
-}
-
-/* Efecto al pasar el mouse sobre el botón */
-button:hover {
-  background-color: whitesmoke; /* Cambia el fondo al pasar el mouse */
-}
-
-/* Estilo para la imagen dentro del botón */
-button img {
-  width: 20px; /* Ancho de la imagen */
-  height: 20px; /* Altura de la imagen */
+  border-color: #007bff;
+  outline: none;
 }
 
 .convert-button {
-  background-color: #28a745; /* Fondo verde */
-  border: none; /* Eliminar borde */
-  border-radius: 5px; /* Bordes redondeados */
-  padding: 10px 20px; /* Espaciado interno */
-  color: white; /* Color del texto */
-  font-size: 1rem; /* Tamaño de fuente */
-  cursor: pointer; /* Cambia el cursor a puntero */
-  display: flex; /* Usar flexbox para centrar la imagen */
-  align-items: center; /* Centrar la imagen verticalmente */
-  transition: 0.3s; /* Transición suave para el fondo */
-  display: flex; /* Usar flexbox para centrar la imagen */
-  align-items: center; /* Centrar la imagen verticalmente */
-  justify-content: center; /* Centrar la imagen horizontalmente */
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
 }
 
-/* Efecto al pasar el mouse sobre el botón "Convertir" */
 .convert-button:hover {
-  background-color: #218838; /* Cambia el fondo a un verde más oscuro al pasar el mouse */
+  background-color: #218838;
 }
 
 .number {
   font-size: 2rem;
   color: rgba(0, 0, 0, 0.5);
-  padding: 1px;
+  padding: 10px;
   border-radius: 10px;
-  margin-top: 10%;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-top: 20px;
 }
 
-/* Cambia el estilo del título */
+@media (min-width: 768px) {
+  form {
+    flex-direction: row;
+  }
+
+  input[type="number"] {
+    width: 70%;
+  }
+
+  .convert-button {
+    width: 30%;
+  }
+}
+
+/* SweetAlert2 custom styles */
 .swal2-title {
-  font-size: 24px; /* Cambia el tamaño de la fuente */
-  color: #3085d6; /* Cambia el color del texto */
-  font-weight: lighter; /* Cambia el peso de la fuente */
-  text-align: center; /* Centra el texto */
+  font-size: 24px;
+  color: #3085d6;
+  font-weight: lighter;
+  text-align: center;
 }
 
-/* Cambia el estilo del texto de la alerta */
-.swal2-html {
-  font-size: 16px; /* Cambia el tamaño de la fuente del texto */
-  color: #555; /* Cambia el color del texto */
-  text-align: center; /* Centra el texto */
+.swal2-html-container {
+  font-size: 16px;
+  color: #555;
+  text-align: center;
 }
