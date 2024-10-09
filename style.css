@@ -1,58 +1,143 @@
-body {
-  background-color: #f4f1eb;
-  display: flex;
-  align-items: center;
+/* style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.bcv-logo {
-  margin-top: 100px;
-  margin-left: 50px;
-  width: 600px;
-  height: 600px;
-  opacity: 20%;
+body,
+html {
+  height: 100%;
+  font-family: Arial, sans-serif;
 }
 
-.text {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 150px;
-  z-index: 1;
-  position: absolute; /* Este elemento estará encima */
-  top: 50px; /* Posicionamiento respecto al contenedor */
-  left: 30px;
-  right: 10px;
-  z-index: 10; /* Asegura que está encima del otro */
-  padding: 10px;
-  left: 100px;
-  margin-bottom: 500px;
-  margin-top: 150px;
-}
-
+/* Contenedor principal */
 .container {
-  position: relative; /* El contenedor base */
-  width: 300px;
-  height: 200px;
-  left: 100px;
-  right: 100px;
-}
-
-.dolar-symbol {
-  position: absolute;
-  bottom: 10px; /* Ajusta la posición según sea necesario */
-  top: 400px;
-  left: 350px;
-  transform: translateX(-50%);
-}
-
-.date-container {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  flex-direction: column;
+  height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+  background-image: url("assets/background-image.jpg"); /* Imagen de fondo */
+  background-size: cover; /* Asegura que la imagen de fondo cubra toda el área */
+  background-position: center; /* Centra la imagen de fondo */
+  text-align: center; /* Centra el texto de los elementos hijos */
   position: relative;
-  text-align: center;
-  width: 300px;
-  height: 100px;
-  background-color: #000000;
-  color: #ffffff;
-  font-size: 45px;
-  border-radius: 5px;
-  bottom: 200px;
-  left: 200px;
+  gap: 15px;
+}
+
+/* Estilos para el contenedor de las tasas de cambio */
+.money {
+  font-size: 2rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Estilos para la fecha */
+#date {
+  font-size: 1.5rem;
+  color: black;
+  margin-top: 20px;
+}
+
+/* Imagen del dólar */
+.dolar-symbol {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  opacity: 0.8; /* Hace que la imagen sea ligeramente transparente */
+}
+
+form {
+  display: flex; /* Usar flexbox para el formulario */
+  flex-direction: row; /* Elementos en fila */
+  align-items: center; /* Alinear verticalmente al centro */
+  margin-left: 10%;
+  gap: 10px;
+}
+
+/* Estilo para los inputs */
+input[type="number"] {
+  width: 200px; /* Ancho fijo para los inputs */
+  padding: 10px; /* Espaciado interno */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 1rem; /* Tamaño de fuente */
+  transition: border-color 0.3s; /* Efecto de transición para el borde */
+}
+
+/* Efecto al enfocar los inputs */
+input[type="number"]:focus {
+  border-color: #007bff; /* Color de borde al enfocar */
+  outline: none; /* Eliminar el contorno predeterminado */
+}
+
+/* Estilo para el botón */
+button {
+  background-color: white; /* Fondo azul */
+  border: none; /* Eliminar borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px; /* Espaciado interno */
+  cursor: pointer; /* Cambia el cursor a puntero */
+  display: flex; /* Usar flexbox para centrar la imagen */
+  align-items: center; /* Centrar la imagen verticalmente */
+  justify-content: center; /* Centrar la imagen horizontalmente */
+  transition: 0.3s; /* Transición suave para el fondo */
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+button:hover {
+  background-color: whitesmoke; /* Cambia el fondo al pasar el mouse */
+}
+
+/* Estilo para la imagen dentro del botón */
+button img {
+  width: 20px; /* Ancho de la imagen */
+  height: 20px; /* Altura de la imagen */
+}
+
+.convert-button {
+  background-color: #28a745; /* Fondo verde */
+  border: none; /* Eliminar borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  color: white; /* Color del texto */
+  font-size: 1rem; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor a puntero */
+  display: flex; /* Usar flexbox para centrar la imagen */
+  align-items: center; /* Centrar la imagen verticalmente */
+  transition: 0.3s; /* Transición suave para el fondo */
+  display: flex; /* Usar flexbox para centrar la imagen */
+  align-items: center; /* Centrar la imagen verticalmente */
+  justify-content: center; /* Centrar la imagen horizontalmente */
+}
+
+/* Efecto al pasar el mouse sobre el botón "Convertir" */
+.convert-button:hover {
+  background-color: #218838; /* Cambia el fondo a un verde más oscuro al pasar el mouse */
+}
+
+.number {
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 1px;
+  border-radius: 10px;
+  margin-top: 10%;
+}
+
+/* Cambia el estilo del título */
+.swal2-title {
+  font-size: 24px; /* Cambia el tamaño de la fuente */
+  color: #3085d6; /* Cambia el color del texto */
+  font-weight: lighter; /* Cambia el peso de la fuente */
+  text-align: center; /* Centra el texto */
+}
+
+/* Cambia el estilo del texto de la alerta */
+.swal2-html {
+  font-size: 16px; /* Cambia el tamaño de la fuente del texto */
+  color: #555; /* Cambia el color del texto */
+  text-align: center; /* Centra el texto */
 }

@@ -8,11 +8,20 @@
   </head>
   <body>
     <div class="container">
-      <img src="assets/bcv.png" alt="" class="bcv-logo" />
+      <div class="money" id="money-container"></div>
       <img src="assets/dolar-svgrepo-com.svg" class="dolar-symbol" alt="" />
-      <p></p>
       <div id="date"></div>
+      <div>
+        <form action="">
+          <input type="number" id="currency1" />
+          <button class="convert-button" id="convert">Convertir</button>
+        </form>
+        <div class="number" id="number">
+          <span>00.00</span>
+        </div>
+      </div>
     </div>
+    <script type="module" src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
-  <script src="index.js"></script>
 </html>
