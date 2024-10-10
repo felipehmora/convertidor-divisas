@@ -1,31 +1,30 @@
-const apiUrl = "http://localhost:3000/";
+import { apiKey } from "./apikey.js";
+const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/pair/USD/VES`;
 const money = document.getElementById("money-container");
 const currency1 = document.getElementById("currency1");
 const convert = document.getElementById("convert");
 const number = document.getElementById("number");
 let dolar = [];
 
-fetch(apiUrl)
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error("Error en la respuesta de la API");
-    }
-    return response.json();
-  })
-  .then((data) => {
-    let innerDolar = data.dolar;
-    dolar.push(innerDolar);
-    money.innerHTML = innerDolar;
+window.onload = fetchDolar();
 
-    /*console.log("Dólar:", data.dolar);
-    console.log("Euro:", data.euro);
-    console.log("Yuan:", data.yuan);
-    console.log("Lira:", data.lira);
-    console.log("Rublo:", data.rublo);*/
-  })
-  .catch((error) => {
-    console.error("Error al obtener los datos:", error);
-  });
+function fetchDolar() {
+  fetch(apiUrl)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Error en la respuesta de la API");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      let innerDolar = data.conversion_rate;
+      dolar.push(innerDolar);
+      money.innerHTML = innerDolar;
+    })
+    .catch((error) => {
+      console.error("Error al obtener los datos:", error);
+    });
+}
 
 //Obteniendo fecha
 
@@ -45,7 +44,7 @@ document.getElementById("date").innerHTML = innerDate;
 
 //Metodo para realizar conversion monetaria
 function bolivaresADolares() {
-  const value1 = dolar[0].replace(",", ".");
+  const value1 = dolar;
   const value2 = currency1.value;
 
   const operacion = Number(value1) * Number(value2);
@@ -54,7 +53,7 @@ function bolivaresADolares() {
 }
 
 function dolaresABolivares() {
-  const value1 = parseFloat(dolar[0].replace(",", ".")); // Valor del dólar
+  const value1 = parseFloat(dolar); // Valor del dólar
   const value2 = parseFloat(currency1.value); // Cantidad de dólares que deseas convertir
 
   if (isNaN(value1) || isNaN(value2) || value2 === 0) {
